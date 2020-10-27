@@ -1,10 +1,11 @@
-using Xunit;
+using System;
+using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
+using Xunit;
 using EntityGraphQL.Schema;
 using System.Linq;
 using static EntityGraphQL.Schema.ArgumentHelper;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 
 namespace EntityGraphQL.Tests
 {
@@ -153,11 +154,11 @@ namespace EntityGraphQL.Tests
 
         public class Pagination<TEntity>
         {
-            [GraphQLNotNull]
+            [Required]
             public IEnumerable<TEntity> Items { get; set; }
-            [GraphQLNotNull]
+            [Required]
             public int Total { get; set; }
-            [GraphQLNotNull]
+            [Required]
 
             public int PageCount { get; set; }
         }
